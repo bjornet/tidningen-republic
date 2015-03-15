@@ -1,0 +1,88 @@
+/* =============================================================================
+   jQuery ui tabs
+   ========================================================================== */
+
+.item-list ul.quicktabs-tabs {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+
+	li {
+		float: none;	
+		display: block;
+		padding: 0;	
+		margin-right: 0;
+
+		@include breakpoint(pxtoem(400,16) pxtoem(959,16)) {
+			float: left;
+		}
+
+		@include breakpoint(pxtoem(1220,16)) {
+			float: left;
+		}
+	}
+
+	li a {
+		border-width: 1px;
+		font-size: pxtoem(16,16);
+		font-weight: bold;
+		border-style: solid;
+		border-color: #CCCCCC;
+		background: #FCFCFC;
+		padding: .6em 5% 0.6em;
+		text-transform: uppercase;
+		@include transition(background 0.4s);
+		display: block;
+		width: 89%;
+		text-decoration: none;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: #E6E6E6;
+		}
+
+		@include breakpoint(pxtoem(400,16) pxtoem(959,16)) {	
+			padding: .6em 1em 0.6em;
+			width: auto;
+		}
+
+		@include breakpoint(pxtoem(1220,16)) {
+			padding: .6em 1.5em 0.6em;
+			width: auto;
+		}
+	}
+
+	.first a {
+		border-right: 1px solid #CCCCCC;
+
+		@include breakpoint(pxtoem(400,16) pxtoem(959,16)) {	
+			border-right: 0;
+		}
+
+		@include breakpoint(pxtoem(1220,16)) {
+			border-right: 0;
+		}
+	}
+
+ 	.active a {
+		background: #fff;
+		color: $black;
+		border-color: #CCCCCC #CCCCCC #ffffff #CCCCCC;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: #fff
+		}
+	}
+}
+
+.quicktabs-tabpage {
+	border-style: solid;
+	border-color: #ccc;
+	border-width: 1px 1px 0 1px;
+	padding: 0;
+	background: #fff;
+	margin-top: -1px;
+}

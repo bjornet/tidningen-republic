@@ -1,0 +1,81 @@
+
+.field-name-field-media {
+  img {
+    display: block;
+  }
+}
+
+.node__link {
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+
+    .node__title {
+      text-decoration: underline;
+    }
+  }
+}
+
+.file-image {
+  position: relative;
+}
+
+.toggle-bildtext {
+  position: absolute;
+  bottom: 1.5em;
+  left: 1.5em;
+  background: #fff;
+  background: rgba(255,255,255,0.8);
+  @include box-shadow(1px 1px 1px rgba(0,0,0,0.2));
+  width: 16px;
+  height: 16px;
+  text-decoration: none;
+  font-size: 0.5em;
+  text-align: center;
+  @include border-radius(8px);
+  @include transition(all 0.4s);
+
+  &:hover,
+  &:focus,
+  &:active {    
+    background: #fff;
+    text-decoration: none;
+  }
+
+  .icon {
+    display: block;
+    font-size: 1.6em;
+    margin: 2px;
+  }
+
+  @include breakpoint($large) {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.field-name-field-file-image-caption {
+  font-size: pxtoem(13,16);
+  line-height: 1.2;
+  color: #fff;
+  background: #000;
+  background: rgba(0,0,0,0.9);
+  padding: 1.2em 4%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 96%;
+  display: none;
+
+  @include breakpoint($large) {
+    color: $black;
+    background: none;
+    padding: 0;
+    position: static;
+    width: auto;
+    display: block !important;
+  }
+}

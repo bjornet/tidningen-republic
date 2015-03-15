@@ -1,0 +1,30 @@
+////////////////////////
+// Module Partials
+//
+// Seperate your layout from Module, building sub folders and partials
+//  in this folder, with everything being imported, in casading order,
+//  into this file.
+//
+////////////////////////
+
+////////////////////////
+// Module imports
+////////////////////////
+@import 'components/admin';
+@import 'components/block';
+@import 'components/comment';
+@import 'components/field';
+@import 'components/flexslider';
+@import 'components/form';
+@import 'components/navigation';
+@import 'components/node';
+@import 'components/page';
+@import 'components/panel';
+@import 'components/search';
+// @import 'components/social-count';
+@import 'components/table';
+@import 'components/tabs';
+@import 'components/taxonomy';
+@import 'components/user';
+@import 'components/views';
+@import 'components/webshop';

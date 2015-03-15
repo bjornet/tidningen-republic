@@ -1,0 +1,386 @@
+////////////////////////
+// Mixins Partials
+//
+// All of your mixins should go in this file.
+////////////////////////
+
+// To use a mixin in this file, add this line to the top of your .scss file:
+//   @import "base";
+// Then to use a mixin for a particular rule, add this inside the ruleset's
+// curly brackets:
+//   @include mix-in-name;
+
+// Font size in em and rem
+$font-size: 16; 			// Your base font-size in pixels
+$line: 24;						// Your base line-height in pixels
+$rem: $font-size*1rem;	// Shorthand for outputting ems, e.g. "12/$rem"
+
+@mixin font-size($sizeValue){
+  font-size: $sizeValue + px;
+  font-size: ($sizeValue * 0.0625rem) + rem;
+}
+
+// Text
+@mixin ingress($font-size: 19) {
+  @extend %monospace;
+  font-size: pxtoem($font-size,16);
+  line-height: pxtoem(34,$font-size);
+	margin-bottom: pxtoem(34,$font-size);
+  margin-right: 0;
+
+  a {
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      color: $grey;
+    }
+  }
+
+  p {
+  	margin: 0;
+  }
+}   
+
+@mixin brodtext($font-size: 20) {
+  font-family: $font-body;
+
+  font-size: pxtoem($font-size - 2,16);
+  line-height: 1.7; 
+
+  @include breakpoint($screen-xs) {
+	 font-size: pxtoem($font-size,16);
+  }
+	
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=hIEfix.png,sizingMethod=crop);
+	zoom: 1;
+
+  p {
+    margin-bottom: pxtoem(34,20);
+  }
+
+	img {
+		display: block;
+	}
+
+	strong,
+	b {
+		font-weight: normal;
+    font-family: $slate-bd;
+	}
+
+	i,
+	em {
+		font-style: normal;		
+    font-family: $slate-it;
+	}
+	
+	a {
+		text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      color: $grey;
+    }
+	}
+
+	ul,
+	ol {
+		padding-left: 1.2em;
+		margin-bottom: 2em;
+
+		@include breakpoint(pxtoem(600,16)) {
+			padding-left: 2.5em;
+		}
+	}
+	
+	ol li {
+		margin-bottom: 0.5em;
+	}
+	
+	table {
+		margin-bottom: 1.6em;
+	}
+	
+	h2 {
+    font-size: pxtoem(24,$font-size);
+    line-height: pxtoem(34,24);
+    margin-top: pxtoem(34,24);
+    margin-bottom: pxtoem(17,24);
+
+    strong {
+      font-weight: normal;
+      font-family: $base-font-family;
+    }
+	}
+	
+	h3 {
+    font-size: pxtoem(20,$font-size);
+    line-height: pxtoem(34,20);
+    margin-top: pxtoem(34,20);
+    margin-bottom: pxtoem(17,20);
+
+    strong {
+      font-weight: normal;
+      font-family: $base-font-family;
+    }
+	}
+	
+	blockquote {
+    @extend %monospace;
+		border: 0;
+		padding: 0;
+		color: $black;
+  	margin-bottom: pxtoem(15,26);
+  	margin-top: pxtoem(48,26);
+  	text-align: left;
+  	text-indent: 0;
+		quotes: '\201D' '\201D';
+
+		&:before {
+			content: open-quote;
+		}
+		
+		&:after {
+			content: close-quote;
+		}
+		
+		p {
+			display: inline;
+		}
+	}
+
+	cite {
+    @extend %monospace;
+		display: block;
+		margin: pxtoem(16,14) $indent-amount pxtoem(30,14);
+	}
+
+  p, h2, h3, ul, ol {
+    @include breakpoint($screen-sm) {
+     margin-right: pxtoem(40,$font-size);
+    }
+  }
+
+  .faktaruta {
+    @include text-box;
+    font-size: pxtoem(16,20);
+    font-family: $base-font-family;
+    border: $border_medium;
+    padding: pxtoem(20,18) pxtoem(15,18) pxtoem(50,18);
+    margin-bottom: pxtoem(34,16);
+    position: relative;
+
+    &:before {
+       content: " ";
+       position: absolute;
+       z-index: -1;
+       top: 20px;
+       left: 15px;
+       right: 15px;
+       bottom: 20px;
+       border-bottom: $border_medium;
+    }
+
+    @include breakpoint($screen-sm) {
+      float: right;
+      width: pxtoem(166,16);
+      margin-left: pxtoem(20,16);
+    }
+  }  
+}
+
+@mixin brodtext-liten($font-size: 18) {
+  font-family: $font-body;
+  font-size: pxtoem($font-size,16);
+  line-height: pxtoem(30,18);
+  text-indent: pxtoem(20,16);
+  
+  p {
+    margin: 0;
+  }
+}
+
+@mixin text-box($font-size: 18) {
+  font-size: pxtoem($font-size,16);
+  line-height: 1.89;
+
+  h2 {
+    text-transform: uppercase;
+    line-height: 1.89;
+    margin: 0;
+  }
+
+  p {
+    margin-bottom: pxtoem(34,18);
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    a {
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: $grey;
+      }
+    }
+  }
+
+
+}
+
+
+
+
+// BOOSTRAP
+
+// Responsive utilities
+// -------------------------
+// More easily include all the states for responsive-utilities.less.
+// $parent hack because sass doesn't support tr& (without space)
+@mixin responsive-visibility($parent) {
+  #{$parent} { display: block !important; }
+  tr#{$parent} { display: table-row !important; }
+  th#{$parent},
+  td#{$parent} { display: table-cell !important; }
+}
+
+@mixin responsive-invisibility($parent) {
+  #{$parent} { display: none !important; }
+  tr#{$parent} { display: none !important; }
+  th#{$parent},
+  td#{$parent} { display: none !important; }
+}
+
+
+// Grid System
+// -----------
+
+// Centered container element
+@mixin container-fixed() {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: ($grid-gutter-width / 2);
+  padding-right: ($grid-gutter-width / 2);
+  @include clearfix();
+}
+
+// Creates a wrapper for a series of columns
+@mixin make-row($gutter: $grid-gutter-width) {
+  margin-left: ($gutter / -2);
+  margin-right: ($gutter / -2);
+  @include clearfix();
+}
+
+// Generate the extra small columns
+@mixin make-xs-column($columns, $gutter: $grid-gutter-width) {
+  position: relative;
+  float: left;
+  width: percentage(($columns / $grid-columns));
+  // Prevent columns from collapsing when empty
+  min-height: 1px;
+  // Inner gutter via padding
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+}
+
+// Generate the small columns
+@mixin make-sm-column($columns, $gutter: $grid-gutter-width) {
+  position: relative;
+  // Prevent columns from collapsing when empty
+  min-height: 1px;
+  // Inner gutter via padding
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+  
+  // Calculate width based on number of columns available
+  @media (min-width: $screen-sm) {
+    float: left;
+    width: percentage(($columns / $grid-columns));
+  }
+}
+
+// Generate the small column offsets
+@mixin make-sm-column-offset($columns) {
+  @media (min-width: $screen-sm) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-sm-column-push($columns) {
+  @media (min-width: $screen-sm) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-sm-column-pull($columns) {
+  @media (min-width: $screen-sm) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+
+// Generate the medium columns
+@mixin make-md-column($columns, $gutter: $grid-gutter-width) {
+  position: relative;
+  // Prevent columns from collapsing when empty
+  min-height: 1px;
+  // Inner gutter via padding
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+  
+  // Calculate width based on number of columns available
+  @media (min-width: $screen-md) {
+    float: left;
+    width: percentage(($columns / $grid-columns));
+  }
+}
+
+// Generate the large column offsets
+@mixin make-md-column-offset($columns) {
+  @media (min-width: $screen-md) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-md-column-push($columns) {
+  @media (min-width: $screen-md) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-md-column-pull($columns) {
+  @media (min-width: $screen-md) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+
+// Generate the large columns
+@mixin make-lg-column($columns, $gutter: $grid-gutter-width) {
+  position: relative;
+  // Prevent columns from collapsing when empty
+  min-height: 1px;
+  // Inner gutter via padding
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+  
+  // Calculate width based on number of columns available
+  @media (min-width: $screen-lg) {
+    float: left;
+    width: percentage(($columns / $grid-columns));
+  }
+}
+
+// Generate the large column offsets
+@mixin make-lg-column-offset($columns) {
+  @media (min-width: $screen-lg) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-lg-column-push($columns) {
+  @media (min-width: $screen-lg) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-lg-column-pull($columns) {
+  @media (min-width: $screen-lg) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+

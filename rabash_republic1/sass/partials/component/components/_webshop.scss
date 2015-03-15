@@ -1,0 +1,452 @@
+/* =============================================================================
+   Webbshop
+   ========================================================================== */
+
+// Override
+.commerce-order-handler-area-order-total
+.commerce-price-formatted-components
+tr.component-type-commerce-price-formatted-amount {
+    font-weight: normal;
+}
+
+// Varukorgen granska
+table.checkout-review {
+  border: $border_medium;
+  width: 550px;
+
+  .pane-title td {
+    top: 1em;
+    text-align: center;
+  }
+
+  th {
+
+  }
+  
+  td {
+    padding: pxtoem(10,16);
+    line-height: pxtoem(34,16);
+
+    a {
+      text-decoration: none;
+
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  td.qty,
+  td.products {
+    font-size: pxtoem(20,16);
+    line-height: 1.4;
+  }
+
+  @include breakpoint($screen-xs $screen-sm) {
+    table {
+      border: 0;
+      padding-bottom: 0;
+      display: block;
+      width: 100%;
+      border-collapse:separate;
+    }
+
+    thead {
+      display: none !important;
+    }
+
+    tbody {
+      display: block;
+      width: 100%;
+    }
+
+    tr {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+    }
+
+    td {
+      display: block;
+      width: 90%;
+      padding: 1em 10%;
+      text-align: left;
+      border: 0 !important;
+    }
+
+    td:empty {
+      display: none;
+    }
+
+    td.qty {
+      float: left;
+      width: 10%;
+      text-align: right;
+    }
+
+    td.products {
+      float: left;
+      width: 69%;
+    }
+
+    td.price {
+      clear: both;
+      text-align: center;
+    }
+
+    .subtotal {
+      text-align: center;
+    }
+  }
+
+  table {
+    width:100%;
+    margin-bottom:30px;
+    border: $border_medium;
+
+    td,
+    th {
+      padding:10px;
+      border-right: $border_medium;
+    }
+
+    td:last-child,
+    th:last-child{
+      border-right:0;
+    }
+
+    thead th {
+      border-bottom: $border_medium;
+      line-height:1.4;
+      white-space:nowrap
+    }
+
+    tbody tr td{
+      border-bottom: $border_medium;
+      vertical-align:top
+    }
+
+    tbody tr:last-child td{
+      border-bottom:0
+    }
+
+    tfoot td{
+      border-top: $border_medium;
+    }
+  }
+
+  .subtotal {
+    font-size: pxtoem(18,16);    
+  }
+}
+
+// Varukorgen (sida)
+.view-commerce-cart-form {
+
+  @include breakpoint($screen-sm) {
+    .uc-price {
+      .label {
+        display: none;
+      }
+    }
+  }
+
+  @include breakpoint($screen-xs $screen-sm) {
+    table {
+      border: 0;
+      padding-bottom: 0;
+      display: block;
+      width: 100%;
+      border-collapse:separate;
+    }
+
+    thead {
+      display: none !important;
+    }
+
+    tbody {
+      display: block;
+      width: 100%;
+    }
+
+    tr {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+    }
+
+    td {
+      display: block;
+      width: 90%;
+      padding: 1em 10%;
+      text-align: left;
+      border: 0 !important;
+    }
+
+    td:empty {
+      display: none;
+    }
+
+    td.remove {
+      display: none;
+    }
+
+    td.image {
+      float: left;
+      width: 40px;
+    }
+
+    td.desc {
+      width: 92%;
+    }
+
+    td.qty {
+      clear: both;
+    }
+
+    .views-field-edit-quantity {
+      label {
+        position: static !important;
+        clip: auto;
+        height: auto;
+        width: auto;
+        overflow: auto;
+        float: left;
+        line-height: 2em;
+        margin-right: 1em;
+
+        .form--required {
+          display: none;
+        }
+      }
+    }
+
+    .subtotal {
+      text-align: center;
+    }
+  }
+  
+  table {
+    width:100%;
+    margin-bottom:30px;
+    border: $border_medium;
+
+    td,
+    th {
+      padding:10px;
+      border-right: $border_medium;
+    }
+
+    th {
+
+    }
+    
+    td {
+      padding: pxtoem(10,16);
+      line-height: pxtoem(34,16);
+    }
+
+    td:last-child,
+    th:last-child{
+      border-right:0;
+    }
+
+    thead th {
+      border-bottom: $border_medium;
+      line-height:1.4;
+      white-space:nowrap
+    }
+
+    tbody tr td{
+      border-bottom: $border_medium;
+      vertical-align:top
+    }
+
+    tbody tr:last-child td{
+      border-bottom:0
+    }
+
+    tfoot td{
+      border-top:$border_medium;
+    }
+  }
+  
+  td.desc {
+
+    
+    a {
+      text-decoration: none;
+      
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: underline;
+      }
+    }
+    
+    .item-list {
+
+    }
+  }
+
+  .views-field-edit-quantity .form--text {
+      width: pxtoem(80,16);
+  }
+
+  .line-item-summary {
+
+    .uc-price {
+      .label {
+        @extend %hidden;
+      }
+    }
+  }
+}
+
+.form-item--commerce-payment-payment-method {
+  label {
+    > .commerce-paypal-icon {
+      display: none;
+    }
+  }
+
+  .label {
+    display: none;
+  }
+
+  .commerce-paypal-icon {
+    display: inline;
+    position: static;
+    margin-top: 0.5em;
+  }
+}
+
+#line-items-div {
+  border: 0;
+  background: #f1f1f1;
+  float: none;
+  margin-bottom: 1em;
+
+  @include breakpoint($screen-sm) {
+    float: right;
+  }
+
+  td {
+    line-height: pxtoem(34,16); 
+  }
+}
+
+// Brödtext
+.checkout-completion-message,
+.cart-empty-page,
+.checkout-help {
+  @include brodtext;
+  margin-bottom: 3em;
+}
+
+
+// Granska beställning tabell
+.view-commerce-cart-summary table {  
+  border: $border_medium;
+  width: 100%;
+
+  th {
+
+  }
+  
+  td {
+    padding: pxtoem(10,16);
+    line-height: pxtoem(34,16);
+  }
+
+  @include breakpoint($screen-xs $screen-sm) {
+    border: 0;
+    padding-bottom: 0;
+    display: block;
+    width: 100%;
+    border-collapse:separate;
+
+    thead {
+      display: none !important;
+    }
+
+    tbody {
+      display: block;
+      width: 100%;
+    }
+
+    tr {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      overflow: hidden;
+
+      &.pane-title-row {
+        padding: 0;
+      }
+    }
+
+    td {
+      display: block;
+      width: 90%;
+      padding: 1em 10%;
+      text-align: left;
+      border: 0 !important;
+
+      &.title-col,
+      &.data-col {
+        width: 30%;
+        float: left;
+      }
+    }
+
+    td:empty {
+      display: none;
+    }
+
+    td.views-field-quantity,
+    td.views-field-total {
+      display: table-cell;
+    }
+  }
+
+
+  td,
+  th {
+    padding:10px;
+    border-right: $border_medium;
+  }
+
+  td:last-child,
+  th:last-child{
+    border-right:0;
+  }
+
+  thead th {
+    border-bottom: $border_medium;
+    line-height:1.4;
+    white-space:nowrap
+  }
+
+  tbody tr td{
+    border-bottom: $border_medium;
+    vertical-align:top
+  }
+
+  tbody tr:last-child td{
+    border-bottom:0
+  }
+
+  tfoot td{
+    border-top:$border_medium;
+  }
+
+  #edit-back {
+
+  }
+}

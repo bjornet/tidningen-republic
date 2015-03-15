@@ -1,0 +1,263 @@
+/* =============================================================================
+   Panels
+   ========================================================================== */
+
+// Pane wrapper
+.panel-pane {
+}
+
+
+// Tabs
+.pane-page-tabs {
+  // display: none;
+}
+
+// Huvudmeny
+.header-block {
+  .pane-system-main-menu {
+    
+    h2 {
+      @extend .element-invisible;
+    }
+
+    ul.menu {
+      margin: 0;
+      padding: 0;
+      list-style: none outside none;
+      line-height: pxtoem(46,16);
+      border-bottom: $border_medium;
+      white-space: nowrap;
+      overflow: hidden;
+
+      li {
+        border-right: $border_medium;
+        display: inline-block;
+
+        &.last {
+          border: none;
+        }
+
+        a {
+          display: inline-block;
+          padding: 0 pxtoem(19,$font-size);
+          text-decoration: none;
+
+          &:hover,
+          &:focus {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Sökning
+.pane-search-form {
+  margin-right: pxtoem(20,16);
+}
+.pane-search-result {
+  h2.pane-title {
+    @extend %heading-featured;
+    margin-top: 2.5em;
+  }
+}
+
+// Underrubrik
+.pane-node-field-underrubrik {
+  @extend %heading-a;
+  margin-top: pxtoem(-34,56);
+}
+
+// Arkiv
+// Dölj rubrik
+.page-arkiv .pane-page-title {
+  @extend .element-invisible;
+}
+
+
+// Senaste numret
+
+// Om Zitzer
+
+.sidebar-right .pane-1,
+.sidebar-right .pane-2 {
+  border: $border_medium;
+  padding: 1.25em;
+  margin-bottom: 2.5em;
+  @include text-box;
+
+  p:last-of-type {
+    padding-bottom: pxtoem(30,18);
+    border-bottom: $border_medium;
+  }
+}
+
+// Om Zitzertext:
+.zitzer-info-block {
+  margin-bottom: 1.25em;
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+// Term description
+.pane-term-description {
+    a {
+    text-decoration: underline;
+  }
+}
+
+// Mest läst
+
+.sidebar-right .pane-mest-l-st-panel-pane-1 {
+  @extend %block-right;
+
+  h2.pane-title {
+    @extend %heading-featured;
+    margin-bottom: 1.25em;
+  }
+
+  .views-row {
+    font-size: pxtoem(18,$font-size);
+    line-height: 1.89;
+    border-bottom: $border_thin;
+    padding: 0.25em 0;
+
+    &.views-row-last {
+      border: none;
+    }
+  }
+}
+
+
+// Varukorg
+
+.pane-commerce-cart-block {
+  @extend %block-right;
+  .line-item-quantity,
+  .line-item-total {
+    display: inline-block;
+    margin-right: 1em;
+    font-size: pxtoem($font-size,16);
+    line-height: 1.89;
+    margin-bottom: 1.25em;
+    a {
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: $grey;
+      }
+    }
+  }
+
+  .line-item-checkout a {
+    @extend %button;
+  }
+
+}
+
+// Startsida
+.pane-start-panel-pane-1 {
+  margin-bottom: 1.25em;
+
+
+  .view-content {
+    border-bottom: $border_thick;
+    padding-bottom: 1.25em;
+    margin-bottom: 2.5em;
+  }
+
+  .view-footer {
+    @include text-box;
+
+    a { 
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: $grey;
+      }
+    }
+  }
+}
+
+// Termsida
+// Termbeskrivning
+.pane-term-description {
+  border-bottom: $border_thick;
+  padding-bottom: 1.25em;
+  margin-bottom: 2.5em;
+}
+
+// Bildspel
+
+.pane-nodequeue-4-panel-pane-1 {
+  @extend %border_double;
+  padding: pxtoem(20,16) pxtoem(40,16);
+
+  @include breakpoint($screen-sm) {
+    padding: pxtoem(55,16) pxtoem(118,16) 2.5em pxtoem(118,16);
+  }
+  
+  h2.pane-title {
+    @extend %heading-featured;
+  }
+}
+
+
+// Bildspel i nod
+.view-bildspel-i-nod {
+  margin-bottom: 2.5em;
+  
+  .image--style-huvudbild {
+    margin-bottom: 0.5em;
+  }
+
+  .field-name-field-fotograf {
+    float: right;
+  }
+}
+
+// Överrubrik
+.pane-node-field-darrad {
+  @extend %monospace;
+  line-height: pxtoem(34,$font-size);
+  margin: 1em 0;
+}
+
+
+// Relaterade texter 
+// Senaste texter
+.pane-tema-texter-panel-pane-1,
+.pane-senaste-artiklarna-panel-pane-1,
+.pane-similarterms-panel-pane-1 {
+  h2.pane-title {
+    @extend %heading-featured;
+    margin-bottom: pxtoem(60,$font-size);
+  }
+}
+
+.pane-tema-texter-panel-pane-1 {
+  margin-bottom: 5em;
+}
+
+// Meny sidfot
+footer {
+  .pane-menu-secondary-menu {
+
+    @include breakpoint($screen-sm) {
+      float: right;
+    }
+    
+    h2 {
+      @extend .element-invisible;
+    }
+
+    ul.menu {
+      @extend %inline-menu;
+    }
+  }
+}

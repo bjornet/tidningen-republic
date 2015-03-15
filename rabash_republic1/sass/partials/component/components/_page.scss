@@ -1,0 +1,97 @@
+/* =============================================================================
+   Skip link
+============================================================================= */
+
+// The skip-link link will be completely hidden until a user tabs to the link.
+#skip-link {
+  margin: 0;
+
+  a,
+  a:visited {
+    display: block;
+    width: 100%;
+    padding: 0.4em 0;
+    text-align: center;
+    background-color: $black;
+    color: $black;
+    font-size: pxtoem(18,16);
+    text-decoration: none;
+    border-bottom: 2px solid $black;
+  }
+}
+
+/* =============================================================================
+   Header
+============================================================================= */
+
+.header-wrapper {
+  border-bottom: $border_thin;
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+  margin-top: pxtoem(28,$font-size);
+  margin-bottom: pxtoem(28,$font-size);
+}
+
+.header__logo {
+	display: block;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .svg & {
+    background-image: url(../logo.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  
+    img {
+      opacity: 0;
+    }
+  }
+
+    width: pxtoem(200,16);
+    float: left;
+}
+
+
+/* =============================================================================
+   Header block
+============================================================================= */
+
+.header-block-inner {
+  border: $border_medium;
+  width: pxtoem(380,$font-size);
+}
+
+
+/* =============================================================================
+   Main content
+============================================================================= */
+
+.main-content {
+  margin-top: pxtoem(40,$font-size);
+}
+
+.page-node .main-content {
+  margin-top: pxtoem(46,$font-size);
+}
+
+.content-main {
+  margin-bottom: pxtoem(80,$font-size);
+}
+
+/* =============================================================================
+   Footer
+============================================================================= */
+
+footer {
+  margin: pxtoem(60,$font-size) 0 2.5em;
+
+  p {
+    margin: 0;
+  }
+}

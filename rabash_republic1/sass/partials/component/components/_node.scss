@@ -1,0 +1,484 @@
+/* =============================================================================
+   Nodes
+   ========================================================================== */
+
+.new,
+.update { /* The "new" or "updated" marker. */
+  color: #c00;
+  background-color: transparent; /* Remove background highlighting from <mark> in normalize. */
+}
+
+
+
+
+/* Teaser node - lista
+   ========================================================================== */
+ 
+.node--teaser {
+	margin-bottom: 1.75em;	
+  padding-bottom: 1.75em;
+  border-bottom: $border_thin;
+  overflow: hidden;
+
+  .node__content {
+    overflow: hidden;    
+    @include brodtext-liten;
+
+    // Person: Titel
+    .field-name-field-person-titel {
+      text-indent: 0;
+      font-family: $base-font-family;
+      font-size: pxtoem(18,20);
+    }
+
+    // Vara: Pris
+    .commerce-product-field {
+      text-indent: 0;
+      font-family: $base-font-family;
+      margin-top: 1em;
+      font-size: pxtoem(18,20);
+    }
+
+    // Vara: Beställ
+    .commerce-add-to-cart {
+
+      .form--submit {
+        @extend %button-link;
+        margin-top: pxtoem(10,16);
+        font-size: pxtoem(16,18);
+      }
+
+      .form--wrapper {
+        margin: 0;
+      }
+    }
+  } 
+
+  .node__title {
+    @extend %heading;
+    font-size: pxtoem(26,$font-size);
+    line-height: 1.3;
+    margin-bottom: pxtoem(9,26);
+  }
+
+  .field-type-image {
+    float: left;
+    margin: 0.25em 1.25em 0.25em 0;
+  }
+
+  // Node Teaser Person
+  &.node--person {
+
+    .field-type-image {
+      float: none;
+      margin: 0 0 1.25em;
+    }
+  }
+}
+
+
+/* Teaser lång - lista
+   ========================================================================== */
+ 
+.node--teaser_lang {
+  margin-bottom: 1.75em;  
+  padding-bottom: 1.75em;
+  border-bottom: $border_thin;
+  overflow: hidden;
+
+  .node__content {
+    overflow: hidden;    
+    @include brodtext-liten;
+
+    // Person: Titel
+    .field-name-field-person-titel {
+      text-indent: 0;
+      font-family: $base-font-family;
+      font-size: pxtoem(18,20);
+    }
+  } 
+
+  .node__title {
+    @extend %heading;
+    font-size: pxtoem(26,$font-size);
+    line-height: 1.3;
+    margin-bottom: pxtoem(9,26);
+  }
+
+  .field-type-image {
+    float: none;
+    margin: 0 0 1.25em;
+  }
+}
+
+
+/* Teaser Ruta
+   ========================================================================== */
+
+.node--ruta {
+  margin-bottom: 2.5em; 
+  overflow: hidden;
+  border: $border-medium;
+  
+  img {
+    width: 100%;
+  }
+
+  .field-name-field-bild {
+    margin-bottom: 0.25em;
+  }
+
+  .node__wrapper {
+    padding: 1.25em;
+  }
+
+  .node__content {
+    overflow: hidden;
+    @include brodtext-liten;
+  }
+
+  .node__title {
+    @extend %heading;
+    font-size: pxtoem(26,16);
+    line-height: 1.3;
+    margin-bottom: pxtoem(9,26);
+  }
+}
+
+/* Teaser Artikel ett
+   ========================================================================== */
+.node--artikel_ett {
+
+  margin-bottom: pxtoem(70,16);
+  overflow: hidden;
+
+  .field-name-field-bild {
+    float: left;
+    margin-right: pxtoem(20, 16);
+  }
+  
+  .node__wrapper {
+    border: $border_front;
+    position: relative;
+    top: pxtoem(20,16);
+    left: pxtoem(20,16);
+    margin-right: pxtoem(80,16);
+    margin-bottom: pxtoem(20,16);
+    padding: 2.5em 2.5em 1.25em;
+    min-height: pxtoem(330,16);
+  }
+  .node__content {
+    overflow: hidden;
+    @extend %monospace;
+    font-size: 1em;
+    line-height: 2.125;
+  }
+  
+  .node__title {
+    @extend %heading;
+    font-size: pxtoem(40, 16);
+    line-height: 1.15;
+    margin: 0.2em 0 0.2em;
+  }
+}
+
+/* Teaser Featured
+ = ========================================================================= */*
+
+.node--featured {
+  .field-name-field-bild {
+    margin-bottom: pxtoem(10,16);
+  }
+
+  .node__title {
+    @extend %heading;
+    font-size: pxtoem(22,16);
+    line-height: pxtoem(26,22);
+  }
+}
+  
+/* Annons högerspalt
+ = ========================================================================= */*
+
+.node--annons_hogerspalt {
+
+  border: $border_medium;
+  padding: 1.25em;
+  margin-bottom: 2.5em;
+  @include text-box;
+
+  .commerce-product-field-field-image-cache {
+    margin-bottom: 0.5em;
+  }
+
+  .node__order,
+  .node__subscribe {
+    margin-top: 1em;
+
+    a { 
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: $grey;
+      }
+    }
+  }
+}
+  
+ 
+/* Full node
+   ========================================================================== */
+
+.node--full {   
+  padding-bottom: 1.25em;
+  margin-bottom: pxtoem(50,$font-size);
+  border-bottom: $border_thick;
+
+  .node__title {
+    @extend %heading-a;
+  }
+
+  .node__meta {
+    margin: 1em 0;
+    line-height: pxtoem(34,$font-size);
+  }
+
+  // Zitzer ingress
+  &.node--artikel {
+    .field-name-body p:first-of-type {
+      @include ingress;
+      font-size: pxtoem(19,20);
+    }
+  }
+
+  // Ingress
+  .field-name-field-ingress {
+    @include ingress;
+  }
+
+  // Produkt bild
+  .field-field-image-cache {
+    margin-bottom: 1.25em;
+
+    @include breakpoint($screen-xs) {
+      float: right;
+      margin-left: 1.25em;
+      margin-top: 0.5em;
+    }
+  }
+
+  // Skribent titel
+  .field-name-field-person-titel {
+    @include ingress;
+  }
+
+  .field-name-body {
+  	@include brodtext;
+
+    .field-name-field-faktaruta {
+      @include text-box;
+      font-size: pxtoem(16,20);
+      font-family: $base-font-family;
+      border: $border_medium;
+      padding: pxtoem(20,18) pxtoem(15,18);
+      margin-bottom: pxtoem(34,16);
+
+      p {
+        margin: 0;
+
+        &:last-of-type {
+          padding-bottom: pxtoem(30,18);
+          border-bottom: $border_medium;
+        }
+      }
+
+      @include breakpoint($screen-sm) {
+        float: right;
+        width: pxtoem(166,16);
+        margin-left: pxtoem(20,16);
+      }
+    }  
+  }
+
+  .field-name-field-fotnot {
+    clear: both;  
+    @include text-box;
+    margin: 2.5em 0;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .node__author {
+    clear: both;
+    text-align: right;
+    margin: 2.5em 0;
+
+    .field .field-label {
+      font-weight: normal;
+    }
+  }
+
+  .node__author {
+    .field-label-inline * {
+      display: inline;
+      float: none;
+    }
+
+    .field-label-inline {
+      
+      .field-item:after {
+        content: ', ';
+      }
+      .field-item:last-of-type:after {
+        content: '';
+      }
+    }
+  }
+
+  .field-name-upload {
+    margin-bottom: 2em;
+  }
+
+
+
+
+  ul.socialcount {
+    float: right;
+    @extend %inline-menu;
+    margin-bottom: pxtoem(10,$font-size);
+  }
+
+  // Varukorg
+  .commerce-add-to-cart {
+    clear: both;
+    max-width: 14em;  
+    margin-bottom: 2.5em;
+
+    label {
+      font-size: pxtoem(18,16);
+    }
+
+    .form--text,
+    .form--submit {
+      width: 100%;
+    }
+  }
+}
+
+
+
+/* Print
+   ========================================================================== */
+.node--print {
+  @extend .node--full;
+
+  .field-name-body {
+    @include brodtext;     
+    max-width: 540px;
+  }
+
+  .field-name-field-media {
+    img {
+      margin-bottom: 10px;
+    }
+
+    .field-name-field-file-image-caption {
+      float: left;
+      width: 70%;
+    }
+
+    .field-name-field-file-image-copyright {
+      float: right;    
+      line-height: 1;
+      width: 25%;
+
+      div {
+        display: inline;
+      }
+    }
+  }
+}
+
+/* Prenumerationsformulär
+   ========================================================================== */
+
+
+/* Annons
+   ========================================================================== */
+
+.node--annons {
+  background: #F7F7F7;
+  display: block;
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* Search result
+   ========================================================================== */
+ 
+.search-result {
+  margin-bottom: 1.75em;  
+  padding-bottom: 1.75em;
+  border-bottom: $border_thin;
+  overflow: hidden;
+
+  .node__content {
+    overflow: hidden;    
+    @include brodtext-liten;
+  } 
+
+  .node__title {
+    @extend %heading;
+    font-size: pxtoem(26,$font-size);
+    line-height: 1.3;
+    margin-bottom: pxtoem(9,26);
+  }
+
+  .meta--search-info {
+    margin-top: 1em;
+  }
+}
+
+/* Unpublished note
+   ========================================================================== */
+
+.node--unpublished {
+  background: lighten($yellow, 30%);
+}
+
+.meta--unpublished { /* The word "Unpublished" displayed underneath the content. */
+  @extend .unpublished;
+}
+@if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+  .lt-ie8 .node--unpublished>*,
+  .lt-ie8 .comment--unpublished>* {
+    position: relative; /* Otherwise these elements will appear below the "Unpublished" text. */
+  }
+}
+
+/* Preview node
+   ========================================================================== */
+ 
+.node--preview {
+  // background-color: #ffffea; // Drupal core uses a #ffffea background
+	width: 600px;
+	font-family: $arial;
+	
+	.page__title { // Glöm inte att anpassa titeln!
+		font-size: 42px;
+		line-height: 1.1;
+		background: transparent;
+	}
+}
+
+/* 404 page
+   ========================================================================== */
+#search404-page-text {
+	margin-bottom: 2em;
+}

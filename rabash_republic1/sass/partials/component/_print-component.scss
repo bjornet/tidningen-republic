@@ -1,0 +1,14 @@
+////////////////////////
+// Print Module Partials
+//
+// Seperate your layout from Module, building sub folders and partials
+//  in this folder, with everything being imported, in casading order,
+//  into this file. This is for Printed files.
+//
+////////////////////////
+
+////////////////////////
+// Module imports
+////////////////////////
+@import 'components/field';
+@import 'components/node';

@@ -1,0 +1,95 @@
+/* 
+This CSS resource incorporates links to font software which is 
+the valuable copyrighted property of WebType LLC, The Font Bureau 
+and/or their suppliers. You may not attempt to copy, install, 
+redistribute, convert, modify or reverse engineer this font 
+software. Please contact WebType with any questions: www.webtype.com
+*/
+
+@import url("http://pls.webtype.com/v.css?ct=46374,46380,46382,46386,46384,46376,46378,46372,46375,46383,46381,46387,46385,46379,46377,46373&r=7437&p=6475&h=rN%2bsdBn5asrLFbWMAqZgbQ%3d%3d");
+
+@font-face {
+ font-family: "Benton Sans";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/0538869b-fa04-4c1b-9151-334046b91aef") format("woff");
+ font-style: normal;
+ font-weight: bold;
+}
+@font-face {
+ font-family: "Benton Sans";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/c0d05566-aca2-482a-9308-7c0e12f60e3a") format("woff");
+ font-style: normal;
+ font-weight: normal;
+}
+@font-face {
+ font-family: "Benton Sans";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/ca79ba13-c578-4c8a-b959-f06eab9fee26") format("woff");
+ font-style: italic;
+ font-weight: bold;
+}
+@font-face {
+ font-family: "Benton Sans";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/b8a1f50c-8506-4bec-ae41-e80fb7051783") format("woff");
+ font-style: italic;
+ font-weight: normal;
+}
+@font-face {
+ font-family: "Benton Sans Cond";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/0895f10a-5dd7-4cc1-adcb-11c882f75f8b") format("woff");
+ font-style: normal;
+ font-weight: bold;
+}
+@font-face {
+ font-family: "Benton Sans Cond";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/5f818ff6-98eb-4bf4-9090-df458a65b555") format("woff");
+ font-style: normal;
+ font-weight: normal;
+}
+@font-face {
+ font-family: "Benton Sans Cond";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/ee67ef7f-82b8-4344-9b51-81d57b41fb1a") format("woff");
+ font-style: italic;
+ font-weight: bold;
+}
+@font-face {
+ font-family: "Benton Sans Cond";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/57f7987e-a6d3-4d79-ba57-e50fca1300ff") format("woff");
+ font-style: italic;
+ font-weight: normal;
+}
+@font-face {
+ font-family: "Benton Sans Cond";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/f3d1f430-9a0c-403c-b9ae-1c8a4e35ad1c") format("woff");
+ font-style: normal;
+ font-weight: 300;
+}
+@font-face {
+ font-family: "Benton Sans Cond";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/cb8356e4-0f38-4416-bd80-4c1ec7d46638") format("woff");
+ font-style: italic;
+ font-weight: 300;
+}
+@font-face {
+ font-family: "Benton Sans";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/d50f61a4-b187-4a7e-9b45-b3530a8e6b5f") format("woff");
+ font-style: normal;
+ font-weight: 300;
+}
+@font-face {
+ font-family: "Benton Sans";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/8b856fa9-5a96-4918-a894-55879ddf9b54") format("woff");
+ font-style: italic;
+ font-weight: 300;
+}
+@font-face {
+ font-family: "Benton Sans";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/1600d058-2c84-4408-8976-48fc861003ef") format("woff");
+ font-style: normal;
+ font-weight: 500;
+}
+@font-face {
+ font-family: "Benton Sans";
+ src: url("http://wac.6a25.edgecastcdn.net/006A25/webtype/ff/3/5107453d-d81a-49a6-8631-ad06d16d4f9d") format("woff");
+ font-style: italic;
+ font-weight: 500;
+}
+

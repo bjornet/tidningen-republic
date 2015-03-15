@@ -1,0 +1,214 @@
+////////////////////////
+// Base Partials
+//
+// These files will be shared across all three of your output
+//  CSS files. Generally included here are only Compass Extension
+//  imports and imports for variables, functions, mixins, and extendables.
+////////////////////////
+
+////////////////////////
+// Compass Imports
+//
+////////////////////////
+@import "compass";
+@import "compass/support";  // Add Compass' IE and vendor prefix support variables.
+@import "compass/utilities/general/clearfix"; // Better than Drupal's clearfix.
+@import "compass/utilities/sprites"; // See http://compass-style.org/help/tutorials/spriting/
+@import "compass/typography/vertical_rhythm"; // Helps set up a vertical rhythm.
+@import "compass/reset/utilities";
+@import "compass/css3";     // Use one CSS3 mixin instead of multiple vendor prefixes.
+@import "compass/css3/opacity";
+@import "compass/css3/box-shadow";
+@import "breakpoint";
+
+
+////////////////////////
+// Compass Extensions
+//
+////////////////////////
+
+//
+// Legacy IE support
+//
+// These variables are used by many mixins to add additional CSS to support
+// specific versions of IE or specific vendor prefixes.
+//
+// To turn on support for IE6 or IE7, set those variables to true.
+//
+// Zen does not require special handling for IE8 or later. But Compass uses that
+// variable for a couple edge cases. We include it for completeness sake. See
+// the documentation at http://compass-style.org/reference/compass/support/
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie8: true;
+
+//
+// Font faces, stacks and sizes.
+//
+
+// Compass' vertical_rhythm extension is a powerful tool to set up a vertical
+// rhythm for your entire page. You can see some of its mixins and functions in
+// use in the normalize.scss file.
+// @see http://compass-style.org/reference/compass/typography/vertical_rhythm/
+
+$base-font-size:   16px; // The font size set on the root html element.
+$base-line-height: 24px; // This line-height determines the basic unit of vertical rhythm.
+
+$h1-font-size: 3.5  * $base-font-size;
+$h2-font-size: 1.5  * $base-font-size;
+$h3-font-size: 1    * $base-font-size;
+$h4-font-size: 1    * $base-font-size;
+$h5-font-size: 1    * $base-font-size;
+$h6-font-size: 1    * $base-font-size;
+
+// The following font family declarations are based on the Microsoft core web
+// fonts which are common fonts available on most computer systems. The DejaVu
+// and Nimbus Sans fonts are commonly available on Linux systems where the MS
+// fonts are less common. Tahoma and Helvetica are also widely available.
+//
+// A user's web browser will look at the comma-separated list and will
+// attempt to use each font in turn until it finds one that is available
+// on the user's computer. The final "generic" font (sans-serif, serif or
+// monospace) hints at what type of font to use if the web browser doesn't
+// find any of the fonts in the list.
+
+// First, let's create some font stacks.
+$arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
+
+$apercu:          "Apercu Mono Regular", 'Andale Mono', monospace, sans-serif;
+$slate:           "Slate W02", $arial;
+$slate-md:        "Slate W02 Medium", $arial;
+$slate-bd:        "Slate W02 Bold", $arial;
+$slate-it:        "Slate W02 Italic", $arial;
+
+// For an explanation of why "sans-serif" is at the end of this list, see
+// http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
+$courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+
+// Now create some variables for the font stacks we want to use on this site.
+$base-font-family: $slate-md; // The font family set on the html element.
+$font-body:        $slate;
+$font-monospace:   $apercu;
+
+// Paragraph margin
+$paragraph: 0 0 pxtoem(34,16);
+
+//
+// Colors, etc.
+//
+
+$light_grey: #e5e5e5;
+$grey: #595959;
+$yellow: #C09853; // warning color
+$green: #468847; // status color
+$red: #B94A48; // error color
+$black: #333333;
+
+// The amount lists, blockquotes and comments are indented.
+$indent-amount: 30px;
+
+// Tab styling.
+$tabs-container-bg: #fff;
+$tabs-border: $black;
+
+// Selected text
+$selection: $grey;
+
+// Focused form item border
+$form-border: $black;
+
+// Borders
+$nav-border-thin: 1px solid $black;
+
+// Menu
+$navbar-height: 40px;
+
+
+// Borders
+$border_thick: 10px solid $black;
+$border_front: 4px solid $black;
+$border_medium: 3px solid $black;
+$border_thin: 2px solid $black;
+
+
+////////////////////////
+// Private Imports
+////////////////////////
+@import 'functions';
+@import 'variables';
+@import 'mixins';
+@import 'extendables';
+
+// Bootstrap
+@import 'responsive-utilities';
+
+////////////////////////
+// Reset imports
+////////////////////////
+@import 'normalize';
+@import 'formalize';
+
+/* =============================================================================
+   General
+   ========================================================================== */
+
+body {
+  line-height: $base-line-height/$base-font-size;
+  background: #fff; 
+  color: $black;
+}
+
+p {
+  margin: 0;
+}
+
+/* =============================================================================
+   Links
+   
+   The order of link states are based on Eric Meyer's article:
+	 http://meyerweb.com/eric/thoughts/2007/06/11/who-ordered-the-link-states
+   ========================================================================== */
+
+a {
+	color: $black;
+  text-decoration: none;
+  @include transition(all 0.4s);
+
+	
+	&:hover,
+	&:focus,
+	&:active {
+		color: $black;
+    text-decoration: underline;
+	}
+}
+
+
+// Borders etc
+
+hr {
+  border-top: $border_thin;
+  border-bottom: $border_thin;
+  border-left: none;
+  border-right: none;
+  height: 5px;
+  margin: 2.5em ($grid-gutter-width / 2);
+  clear: both;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+// Bootstrap stuff
+
+*, *:before, *:after {
+  @include box-sizing(border-box);
+}
+
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+

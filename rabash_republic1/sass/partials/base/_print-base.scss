@@ -1,0 +1,59 @@
+////////////////////////
+// Print Base Partials
+//
+// Seperate your layout from design, building sub folders and partials
+//  in this folder, with everything being imported, in casading order,
+//  into this file. This is for Printed files.
+//
+////////////////////////
+
+* { 
+	background : transparent !important; 
+	color : black !important; 
+	text-shadow : none !important; 
+	filter : none !important;
+	-ms-filter : none !important; 
+} 
+
+body {
+  width: 500pt;
+  margin: 10pt auto !important;
+}
+
+.layout--full .layout__inner {
+	width: 100%;
+	float: none;
+}
+
+a, a:visited { 
+	color : #444 !important; 
+	text-decoration : underline; 
+}
+
+article abbr[title]:after { 
+	content : " (" attr(title) ")"; 
+}
+  
+pre, 
+blockquote { 
+	border : 1px solid #999; 
+	page-break-inside : avoid; 
+}
+
+thead { 
+	display : table-header-group; 
+}
+
+tr, 
+img { 
+	page-break-inside : avoid; 
+}
+
+p, h2, h3 { 
+	orphans : 3; 
+	widows : 3; 
+}
+
+.print-logo {
+	margin: 0 auto;
+}

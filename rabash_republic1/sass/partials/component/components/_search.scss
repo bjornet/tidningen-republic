@@ -1,0 +1,45 @@
+#search404-page-text,
+.search__count,
+.search__help {
+  @include brodtext;
+}
+
+.search-form label,
+.search__title,
+.search__count {
+  @extend %visuallyhidden;
+}
+
+.search-results {
+  list-style: none;  
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0;
+  }
+}
+
+.pane-search-form-advanced {
+
+  .form--search {
+    width: 100%;
+    margin-bottom: 1em;
+
+    @include breakpoint($screen-xs) {
+      width: 70%;
+    }
+
+    @include breakpoint($screen-sm) {
+      width: 80%;
+    }
+  }
+
+  .form--submit {
+    width: 100%;
+
+    @include breakpoint($screen-xs) {
+      width: auto;
+    } 
+  }
+}

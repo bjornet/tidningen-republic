@@ -1,0 +1,37 @@
+
+.panel-2col { 
+/*  overflow: hidden;  */
+}
+
+#panels-edit-display.layout--left { 
+  float: left; 
+  width: 50%; 
+}
+* html #panels-edit-display .layout--left {
+  width: 49.9%;
+}
+
+#panels-edit-display.layout--left .layout__inner { 
+  margin: 0 .5em 1em 0;
+}
+
+#panels-edit-display.layout--right { 
+  float: left; 
+  width: 50%; 
+}
+* html #panels-edit-display .layout--right {
+  width: 49.9%;
+}
+
+#panels-edit-display.layout--right .layout__inner  { 
+  margin: 0 0 1em .5em;
+}
+
+#panels-edit-display .panel-pane,
+#panels-edit-display .helperclass {
+  margin: .5em;
+}
+
+#panels-edit-display.panel-separator {
+  margin: 0 0 1em 0;
+}

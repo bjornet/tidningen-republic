@@ -1,0 +1,270 @@
+
+
+/* =============================================================================
+   Bildspel i nod
+   ========================================================================== */
+
+.media-youtube-video,
+.media-vimeo-video {
+
+  iframe,
+  object,
+  embed {
+    width: 100%;
+  }
+}
+ 
+.view-bildspel-i-nod {
+  position: relative;
+
+  .node--full & {
+    margin-bottom: pxtoem(40,16);
+  }
+
+  .views-field-field-media img {
+    margin-bottom: 10px;
+  }
+
+  .field-name-field-file-image-caption {
+    float: left;
+    width: 92%;  
+
+    @include breakpoint($large) {
+      width: 70%;
+    }
+  }
+
+  .field-name-field-file-image-copyright {
+    float: right;  
+    width: 100%;  
+    line-height: 1;
+    text-align: right;
+
+    @include breakpoint($large) {
+      width: 25%;
+    }
+
+    div {
+      display: inline;
+    }
+  }
+
+  .counter {
+    font-size: pxtoem(13,16);
+    line-height: 1;
+    color: #999;
+    text-transform: uppercase;
+    border-left: 1px solid #ccc;
+    padding-left: 0.5em;
+    margin-left: 0.5em;
+  }
+}
+
+/* =============================================================================
+   "More" links
+   ========================================================================== */
+
+.more-link {
+  text-align: right; /* LTR */
+  font-size: pxtoem(13,16);
+}
+
+.more-help-link {
+  text-align: right; /* LTR */
+}
+.more-help-link a {
+  background-image: inline-image("help.png");
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    *background-image: url(../images/help.png);
+  }
+  background-position: 0 50%; /* LTR */
+  background-repeat: no-repeat;
+  padding: 1px 0 1px 20px; /* LTR */
+}
+
+
+/* =============================================================================
+   Pager
+   ========================================================================== */
+
+// A list of page numbers when more than 1 page of content is available.
+.item-list .pager {
+  clear: both;
+  padding: 0;
+  text-align: center;
+  
+  a {
+    color: $black;
+    text-decoration: none;
+    @include transition(color 0.4s);
+    
+    &:hover,
+    &:focus,
+    &:active {
+      color: $black;
+    }
+  }
+}
+
+%pager-item {
+  display: inline;
+  padding: 0 0.5em;
+  list-style-type: none;
+  background-image: none;
+}
+
+.pager-item,      /* A list item containing a page number in the list of pages. */
+.pager-first,     /* The first page's list item. */
+.pager-previous,  /* The previous page's list item. */
+.pager-next,      /* The next page's list item. */
+.pager-last,      /* The last page's list item. */
+.pager-ellipsis { /* A concatenation of several list items using an ellipsis */
+  @extend %pager-item;
+}
+
+// The current page's list item.
+.pager-current {
+  @extend %pager-item;
+  font-weight: bold;
+}
+
+.item-list .pager-load-more {
+
+  a {    
+    display: block;
+    background: #ccc;
+    padding: 1.5em 0 1.2em;
+    @include transition(all 0.4s);
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: darken(#ccc, 8%);
+    }
+    
+    &:active {
+      @include box-shadow(inset rgba(#000, 0.4) 0 0 3px 0);
+    }
+  } 
+
+  .ajax-progress .throbber {
+    margin: 0 1.5em;
+  }
+}
+
+
+/* =============================================================================
+   Varukorg
+   ========================================================================== */
+
+.commerce-line-item-views-form .commerce-line-item-actions {
+    text-align: right;
+}
+
+// Vy: varukorg
+.view-commerce-cart-form,
+.view-commerce-cart-summary {
+  padding-bottom: 3em;
+  margin-bottom: 3.5em;
+
+  .views-field-line-item-title {
+    @include breakpoint($screen-sm) {
+      width: 45%;
+    }
+  }  
+  
+  .product-title {
+    
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+  
+  td.views-field-commerce-unit-price,
+  td.views-field-quantity,
+  td.views-field-commerce-total {
+
+  }
+
+  td.views-field-commerce-unit-price {
+    display: none;
+
+    @include breakpoint($screen-sm) {
+      display: table-cell;
+    }
+  }
+
+  td.views-field-commerce-unit-price,
+  td.views-field-edit-quantity,
+  td.views-field-commerce-total {
+    display: table-cell;
+  }
+  
+  .field-name-field-image-cache {
+    float: left;
+    margin-right: 1.25em;
+  }
+  
+  .line-item-summary {
+    margin-bottom: 40px;
+    font-size: pxtoem(18,16);
+
+    @include breakpoint($screen-sm) {
+      float: right;
+    }
+  }
+  
+  .commerce-order-handler-area-order-total {
+    line-height: 50px;
+    padding: 0;
+    float: right;
+    margin-bottom: 40px;
+    width: 100%;
+
+    @include breakpoint($screen-sm) {
+      width: auto;
+    }
+    
+    .commerce-price-formatted-components {
+      width: auto;
+      margin: 0;      
+    }
+    
+    td {
+      display: table-cell;
+      border: 0;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    table tr {
+
+    }
+    
+    .component-title {
+      text-align: right;
+      padding-right: 0.5em;
+      width: 50%;
+
+      @include breakpoint(pxtoem(700,16)) {
+        width: auto;
+      }
+    }
+    
+    .component-total {
+      text-align: left;
+      width: 50%;
+
+      @include breakpoint($screen-sm) {
+        width: auto;
+      }
+    }
+  }
+}
+
+
+

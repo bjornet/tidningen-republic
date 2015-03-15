@@ -1,0 +1,24 @@
+////////////////////////
+// Functions Partials
+//
+// All of your functions should go in this file.
+////////////////////////
+
+// Font size in em
+@function pxtoem($target-px, $context) {
+  @return ($target-px / $context) * 1em;
+}
+
+$root-font-size: 16;
+
+// returns a target / context value
+@function remcalc($target,$context){
+    @return ($target/$context)
+}
+
+// grabs the desired size (in px) and spits out a REM value
+
+@mixin rem($selector,$target,$context:$root-font-size) {
+    #{$selector} : ($target) + px;
+    #{$selector} : remcalc($target,$context) + rem;
+}

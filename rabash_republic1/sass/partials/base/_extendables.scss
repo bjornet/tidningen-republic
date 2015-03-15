@@ -1,0 +1,319 @@
+////////////////////////
+// Extendables Partials
+//
+// All of your extendable classes, ids, and placeholder extendables
+//   should go in this file.
+////////////////////////
+
+// element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+.element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
+  }
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Turns off the element-invisible effect.
+.element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+.element-focusable {
+  @extend .element-invisible;
+
+  &:active,
+  &:focus {
+    @extend .element-invisible-off;
+  }
+}
+
+// The word "Unpublished" displayed underneath unpublished nodes and comments.
+.unpublished {
+  height: 0;
+  overflow: visible;
+  color: $red;
+  font-size: pxtoem(20,16);
+  line-height: 1;
+  font-family: "Arial Black", Arial, Verdana, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  word-wrap: break-word; // A very nice CSS3 property
+
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    .lt-ie8 &>* {
+      position: relative; // Otherwise these elements will appear below the "Unpublished" text.
+    }
+  }
+}
+
+////////////////////////
+// Accessibility
+////////////////////////
+
+%hidden { 
+	display : none; 
+	visibility : hidden; 
+}
+
+// Hide visually
+%visuallyhidden { 
+	position : absolute;
+	clip : rect(0 0 0 0); 
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	overflow : hidden;
+	margin: -1px;
+	padding : 0;
+	height : 1px;      
+	width : 1px;
+	border : 0; 
+	
+	&.focusable:active,
+	&.focusable:focus { 
+		position : static;
+		clip : auto; 
+		overflow : visible;
+		height : auto; 
+		margin : 0;   
+		width : auto; 
+	}
+}
+
+// Allow an element to be focusable via keyboard
+%visible { 
+	position : static;
+	clip : auto; 
+	overflow : visible;
+	height : auto; 
+	margin : 0;   
+	width : auto; 
+}
+
+// Hide but maintain layout
+%invisible { 
+	visibility : hidden; 
+}
+
+
+
+////////////////////////
+// Typography
+////////////////////////
+
+// Mono space-text
+
+%monospace {
+  font-family: $apercu;
+  text-transform: uppercase;
+  font-size-adjust:0.5;
+  font-weight:normal;
+  font-style:normal;
+}
+
+%heading-featured {
+  @extend %monospace;
+  border-bottom: $border_thin;
+  line-height: 1.875;
+  margin-bottom: pxtoem(40,$font-size);
+  display: inline-block;
+}
+
+// Headings
+
+%heading {
+  font-family: $base-font-family;
+  font-weight: normal;
+  text-transform: lowercase;
+
+  a {
+    color: $black;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+      color: $black;
+    }
+  }
+}
+
+
+// Blockrubrik 
+
+
+// Artikelrubrik
+%heading-a {
+	@extend %heading;
+  font-size: pxtoem(50,16);
+  line-height: 1.2;
+  margin: pxtoem(18,56) 0 pxtoem(34,56);
+  word-wrap: break-word;
+
+  @include breakpoint($screen-xs) {
+    font-size: pxtoem(56,16);
+  }  
+}
+
+
+%heading-b {
+	@extend %heading;
+  font-size: 1em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+%heading-c {
+	@extend %heading;
+  font-size: pxtoem(26,16);
+  line-height: 1.2;
+  margin: 0 0 0.83em;
+}
+%heading-d {
+	@extend %heading;
+  font-size: pxtoem(22,16);
+  line-height: 1.2;
+  margin: 0 0 0.83em;
+}
+%heading-e {
+	@extend %heading;
+ 	font-size: pxtoem(16,16);
+  line-height: 1.2;
+  margin: 0 0 0.83em;
+}
+%heading-f {
+  @extend %heading;
+  font-size: pxtoem(14,16);
+  line-height: 1.2;
+  margin: 0 0 0.83em;
+}
+
+
+////////////////////////
+// Search button
+////////////////////////
+
+%search-image {
+	height: 45px;
+  background-color: transparent;
+
+	.no-js &,
+	.no-svg & {
+		background-image: url(../images/icons/icon-search.png);
+	}
+	
+	.svg & {
+		background-image: url(../images/icons/icon-search.svg);
+	}
+}
+
+////////////////////////
+// Elements
+////////////////////////
+
+%button {
+    -webkit-appearance: none;
+  @include background-clip(padding-box);
+  background-color: #fff;
+  border: $border_medium;
+  cursor: pointer;
+  color: $black;
+  display: inline-block;
+  line-height: pxtoem(44,18);
+  // height: pxtoem(44,16);
+  font-size: pxtoem(18,16);
+  overflow: visible;
+  padding: 0 pxtoem(40,18);
+  text-decoration: none;
+  vertical-align: top;
+  width: 100%;
+  text-align: center;
+  @include transition(all 0.4s);
+  
+  &:active,
+  &:hover,
+  &:focus {
+    background-color: $light_grey;
+    color: $black;
+  }
+}
+
+%button-link {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  font-size: 1em;
+  line-height: 1;
+  height: 1em;
+
+  &:active,
+  &:hover,
+  &:focus {
+    background: none;
+    color: $black;
+    text-decoration: underline;
+  }
+}
+
+%border_double {
+  border: 2px solid $black;
+  box-shadow: 0 0 0 5px #fff inset,
+  0 0 0 7px $black inset;
+}
+
+// Block
+%block-right {
+  border: $border_medium;
+  padding: 1.25em;
+  margin-bottom: 2.5em;
+}
+
+%inline-menu {
+  margin: 0 0 1em;
+  padding: 0;
+  list-style: none outside none;
+  line-height: 1.25;
+  overflow: hidden;
+
+  li {
+    border-right: $border_thin;
+    display: inline-block;
+
+    &.last {
+      border: none;
+    }
+
+    a {
+      display: inline-block;
+      padding: 0 1em;
+    }
+
+    &.first a {
+      padding-left: 0;
+    }
+
+    &.last a {
+      padding-right: 0;
+    }
+  }
+}
+
+////////////////////////
+// Artikellista
+////////////////////////
+
+.list--articles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

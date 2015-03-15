@@ -1,0 +1,83 @@
+name        = Republic 1
+description = Tema för Republic
+screenshot  = screenshot.png
+
+core        = 7.x
+
+; Subtema till Rabash Base
+base theme  = rabash_base
+
+; First we remove the system's menu styling since the theme has its own.
+stylesheets[all][] = system.menus.css
+stylesheets[all][] = system.messages.css
+
+; Stylesheets
+stylesheets[screen][] = css/screen.css
+; stylesheets[print][] = css/print.css
+
+; Javascript: jQuery plugins
+scripts[] = js/jquery.formalize.js
+; scripts[] = js/socialcount.js
+scripts[] = js/jquery.flexslider-min.js
+
+; Javascript: Script
+scripts[] = js/script.js
+
+regions[search]         = Search
+regions[help]           = Help
+regions[content]        = Content
+regions[footer_first]   = Första sidfoten
+regions[footer_second]  = Andra sidfoten
+
+; The page_top and page_bottom regions are hidden, which means they will not
+; show up on the blocks administration page. But they are required in order for
+; the html.tpl.php to work properly, so do not delete them.
+
+regions[page_top]       = Page top
+regions[page_bottom]    = Page bottom
+
+
+; Various page elements output by the theme can be toggled on and off. The
+; "features" control which of these check boxes display on the
+; admin/appearance config page. This is useful for suppressing check boxes
+; for elements not used by your sub-theme. To suppress a check box, omit the
+; entry for it below. See the Drupal 7 Theme Guide for more info:
+; http://drupal.org/node/171205#features
+
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = favicon
+features[] = main_menu
+features[] = comment_user_verification
+features[] = secondary_menu
+
+; Panels layouts. You can place multiple layouts under the "layouts" folder.
+plugins[panels][layouts] = plugins/layouts
+
+settings[rabash_base_breadcrumb]           = yes
+settings[rabash_base_breadcrumb_separator] = ' › '
+settings[rabash_base_breadcrumb_home]      = 1
+settings[rabash_base_breadcrumb_trailing]  = 1
+settings[rabash_base_breadcrumb_title]     = 1
+settings[rabash_base_html5_respond_meta][] = respond
+settings[rabash_base_html5_respond_meta][] = html5
+settings[rabash_base_html5_respond_meta][] = meta
+settings[rabash_base_appletouchicon][]		 = 0
+settings[rabash_base_goodies_login]	  		 = 1
+settings[rabash_base_goodies_feed]	 		   = 1
+settings[rabash_base_rebuild_registry]     = 0
+settings[rabash_base_enable_chrome_frame]	 = 1
+settings[rabash_base_min_ie_support]			 = 7
+settings[rabash_base_footer_js]						 = 1
+settings[rabash_base_html_tags]						 = 1
+settings[rabash_base_viewport_width]			 = 1
+settings[rabash_base_modernizr_debug]			 = 1
+
+; Breakpoints
+breakpoints[small] = (min-width: 0px)
+breakpoints[medium] = (min-width: 400px)
+breakpoints[large] = (min-width: 600px)
+breakpoints[xlarge] = (min-width: 800px)

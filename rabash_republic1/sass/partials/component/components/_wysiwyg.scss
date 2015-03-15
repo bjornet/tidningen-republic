@@ -1,0 +1,25 @@
+/* =============================================================================
+   WYSIWYG
+   ========================================================================== */
+
+
+body.cke_editable {
+  width: 675px;
+  padding: 1em;
+  
+	@include brodtext;
+
+	h2 strong,
+	h3 strong,
+	strong,
+	b {
+		font-weight: bold;
+	}
+
+	h2 em,
+	h3 em,
+	em,
+	i {
+		font-style: italic;
+	}
+}
