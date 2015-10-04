@@ -19,7 +19,7 @@
 @import "compass/css3";     // Use one CSS3 mixin instead of multiple vendor prefixes.
 @import "compass/css3/opacity";
 @import "compass/css3/box-shadow";
-@import "breakpoint";
+@import "../bower_components/compass-breakpoint/stylesheets/breakpoint";
 
 
 ////////////////////////
