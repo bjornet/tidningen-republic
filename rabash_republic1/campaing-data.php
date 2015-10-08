@@ -1,8 +1,8 @@
 <?php
 // Get Variables
-$dbname = 'tidningen_republic';
-$dbusername = 'root';
-$dbpass = 'root';
+$dbname = 'quaspar_republic';
+$dbusername = 'quaspar_republic';
+$dbpass = 'cuO89&rwV6E6';
 $dbhost = 'localhost';
 
 $insertKeys = '';
@@ -13,10 +13,14 @@ $count = 0;
 foreach ($_POST as $key => $value) {
 	$count++;
 	$insertKeys .= $count < $countTot ? $key . ", " : $key;
+	# LYBE: Björn [Clean value from whitespace if INT] 
+	if ($key === 'phone' || $key === 'zip') {
+		$value = str_replace(' ', '', $value);
+	}
+
 	$insertVals .= $count < $countTot ? "'{$value}'" . ", " : "'{$value}'";
+
 }
-
-
 
 $connection = mysql_connect("$dbhost", "$dbusername", "$dbpass");
 if (!$connection) {

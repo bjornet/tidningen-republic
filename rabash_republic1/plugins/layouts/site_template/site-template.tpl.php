@@ -53,15 +53,13 @@
 <div id="my_popup">
 
 	<div class="col1">
-		<div class="text">
-			Some text here that explains whats going on here!
-		</div>
-		
+		<div class="text">Testa Re:public gratis!</div>
+
 		<form action="#" type="post" accept-charset="utf-8">
-			<p><input name="phone" type="tel" pattern="\d{4}[\s]*\d{3}[\s]*\d{3}" placeholder="ex 0706 999 111" id="input-phone" required></p>
-			<p><input name="name" type="text" placeholder="Fullständigt namn" required></p>
+			<p><input name="phone" type="tel" pattern="(\d\s*){9,10}" placeholder="Telenr" id="input-phone" required></p>
+			<p><input name="name" type="text" placeholder="Namn" required></p>
 			<p><input name="streetaddress" type="text" placeholder="Gatuadress" required></p>
-			<p><input name="zip" type="number" placeholder="Postnummer" required></p>
+			<p><input name="zip" type="text" pattern="(\d\s*){5}" placeholder="Postnr" required></p>
 			<p><input name="city" type="text" placeholder="Stad" required></p>
 			<p>
 				<input id="form-submit" type="submit" style="display: none;" value="">
@@ -72,9 +70,12 @@
 	<div class="col2">
 		<?php # LYBE: Björn [Add an optional button to close the popup] ?>
 		<button class="my_popup_close">X</button>
-		<img src="http://tidningenrepublic.se/sites/default/files/styles/forstasida/public/hjarnornaskrig2.jpg">
-	</div>		
+		<img src="try-issue-omslag.jpg">
+	</div>
+	
+	<div class="clear"></div>
 
+	<div class="small-text"><span>Re:public fyller 10 år! Det vill vi fira med att låta fler känna på tidningen. Fyll i dina uppgifter här så kommer det sprillans nya extra tjocka jubileumsnumret i brevlådan – helt utan kostnad. <b>Obs: Erbjudandet gäller endast till söndag 11 oktober.</b></span></div>
 </div>
 
 <script>
@@ -152,7 +153,7 @@ jQuery(document).ready(function($) {
 				$('#my_popup').popup('toggle');
 
 
-				var tnxMsg = "<div class='tnx-msg'>Tack för din förfrågan vi skickar vad du vill snart!</div>";
+				var tnxMsg = "<div class='tnx-msg'>Vad kul att du väljer oberoende journalistik. Trevlig läsning!</div>";
 
 
 				$('body').prepend(tnxMsg);
@@ -183,6 +184,9 @@ jQuery(document).ready(function($) {
 
 <?php # LYBE: Björn [Popup: Styles] ?>
 <style type="text/css" media="screen">
+	.clear {
+		clear: both;
+	}
 	#my_popup {
 		font-family: sans-serif;
 		transform: scale(0.9);
@@ -193,7 +197,8 @@ jQuery(document).ready(function($) {
 	.popup_visible #my_popup { transform: scale(1); }
 
 	.col1, .col2 {
-		width: 200px;
+		/* width: 200px;*/
+		width: 50%;
 		float: left;
 	}
 
@@ -209,18 +214,33 @@ jQuery(document).ready(function($) {
 	    padding: 15px 10px 10px;
 	}
 	#my_popup img {
-	    width: 100%;
-	    margin: 20px 0px 0px;
+	    width: 85%;
+	    margin: 9px 0px 0px;
 	    float: right;
 	}
 	
 	#my_popup p {
-		width: 65%;
-		margin: 2px;
+		margin-bottom: 2px;
 	}
 	
-	#my_popup p input {
-		padding: 15px 20px;
+	#my_popup p input { padding: 15px 20px; }
+	@media (min-width: 768px) {
+		#my_popup p input {
+			width: 100%;
+		}
+	}	
+	
+	#my_popup .text {
+	    font-size: 1.1em;
+	    padding-left: 4px;
+	    font-weight: bold;
+	    position: absolute;
+	}
+	#my_popup .small-text {
+	    margin-top: 10px;
+	    font-size: 0.8em;
+	    max-width: 500px;
+	    float: left;
 	}
 
 	#my_popup label.form-submit {
@@ -235,15 +255,20 @@ jQuery(document).ready(function($) {
 	    font-size: 0.8em;
 	}
 	
+	#my_popup .col1 form { margin-top: 67px; }
+	
 	.tnx-msg {
-	    background-color: white;
+		background-color: white;
 	    margin: 0;
 	    display: block;
-	    width: 96%;
-	    padding: 2%;
+	    width: 100%;
 	    text-align: center;
 	    font-family: sans-serif;
 	    color: crimson;
+	    position: fixed;
+	    z-index: 99;
+	    box-shadow: black 0px -7px 10px 2px;
+	    padding: 20px 0;
 	}
 	
 </style>
