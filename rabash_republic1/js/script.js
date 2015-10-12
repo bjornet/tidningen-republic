@@ -75,9 +75,6 @@ attach: function(context, settings) {
     var next = $(this).next('.views-row');
     var artikelEven = $('article', next);
 
-    console.log(artikelOdd.height());
-    console.log(artikelEven.height());
-
     if (artikelOdd.height() < artikelEven.height()) {
       artikelOdd.css('min-height', artikelEven.height() + borderHeight);
     } else {
