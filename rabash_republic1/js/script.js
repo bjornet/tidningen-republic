@@ -43,6 +43,8 @@ attach: function(context, settings) {
     nextText: 'Nästa bild'
   });
 
+   /** LYBE: Björn [Add email explain: ] **/
+  jQuery('#edit-account-login').append('<div style="width: 290px; background: whitesmoke; padding: 6px 12px;">Om du beställer 2 prenumerationer till priset av 1 så mejlar vi dig och frågar efter din väns adress</div>');
 
 
   // Toggle bildtext på små skärmar
