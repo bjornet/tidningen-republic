@@ -15,3 +15,6 @@ Theme folder
 	- Gör till egen modul
 
 ## DONE
+### Deploybot
+	- Integrera Deploybot mot Slack
+	- Sätt upp koppling mot miljö från Github
