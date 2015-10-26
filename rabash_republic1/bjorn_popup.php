@@ -10,7 +10,7 @@
 <div id="my_popup">
 
 	<div class="col1">
-		<div class="text">Testa Re:public gratis!</div>
+		<div class="text">”Hem till byn” nominerat till Stora Journalistpriset!</div>
 
 		<form action="#" type="post" accept-charset="utf-8">
 			<p><input name="phone" type="tel" pattern="(\d\s*){9,10}" placeholder="Telenr" id="input-phone" required></p>
@@ -27,26 +27,27 @@
 	<div class="col2">
 		<?php # LYBE: Björn [Add an optional button to close the popup] ?>
 		<button class="my_popup_close">X</button>
-		<img src="try-issue-omslag.jpg">
+		<img src="http://tidningenrepublic.se/sites/default/files/styles/huvudbild/public/grim1_2.jpg">
 	</div>
 	
 	<div class="clear"></div>
 
-	<div class="small-text"><span>Re:public fyller 10 år! Det vill vi fira med att låta fler känna på tidningen. Fyll i dina uppgifter här så kommer det sprillans nya extra tjocka jubileumsnumret i brevlådan – helt utan kostnad. <b>Obs: Erbjudandet gäller endast till söndag 11 oktober.</b></span></div>
+	<div class="small-text"><span><b>Det här reportaget kom till efter hundratals timmar av ideellt arbete från skribent och fotograf Alexander Mahmoud samt Re:publics redaktion. Stöd oberoende journalistik! Teckna en prenumeration nu - de femtio första får ”Hem till byn”-numret som bonus!</b></span></div>
 </div>
 
 <script>
 jQuery(document).ready(function($) {
 	$.noConflict();
 	
+	var cookieName = 'popup_htb';
 	// Initialize the plugin
-	if (getCookie('popup') === '') {
+	if (getCookie(cookieName) === '') {
 		$('#my_popup').popup({
 			autoopen: true,
 			autozindex: true,
 			focuselement: '#input-phone',
 			transition: 'all 0.3s',
-			onclose: setCookie('popup', 'true', 90)
+			onclose: setCookie(cookieName, 'true', 90)
 		});
 	}
 
@@ -171,7 +172,7 @@ jQuery(document).ready(function($) {
 	    padding: 15px 10px 10px;
 	}
 	#my_popup img {
-	    width: 85%;
+	    width: 95%;
 	    margin: 9px 0px 0px;
 	    float: right;
 	}
@@ -195,7 +196,7 @@ jQuery(document).ready(function($) {
 	}
 	#my_popup .small-text {
 	    margin-top: 10px;
-	    font-size: 0.8em;
+	    font-size: 1.2em;
 	    max-width: 500px;
 	    float: left;
 	}

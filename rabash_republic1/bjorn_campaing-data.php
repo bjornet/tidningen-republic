@@ -1,9 +1,9 @@
 <?php
 // Get Variables
-$dbname = '';
-$dbusername = '';
-$dbpass = '';
-$dbhost = '';
+$dbname = 'quaspar_republic';
+$dbusername = 'quaspar_republic';
+$dbpass = 'cuO89&rwV6E6';
+$dbhost = 'localhost';
 
 $insertKeys = '';
 $insertVals = '';
