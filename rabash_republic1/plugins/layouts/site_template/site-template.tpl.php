@@ -37,7 +37,17 @@
   <?php endif; ?>
 </div>
 
+<?php # LYBE: Björn [DEACTIVATED]  ?>
+<?php # LYBE: Björn [DEACTIVATED]  ?>
+<?php # LYBE: Björn [DEACTIVATED]  ?>
+<?php # LYBE: Björn [DEACTIVATED]  ?>
+
 <?php # LYBE: Björn [Popup: Scripts] ?>
-<?php if (strstr($_SERVER['REQUEST_URI'], 'hem-till-byn')): ?>
-	<?php include(dirname(__FILE__)."/../../../bjorn_popup.php"); ?>
-<?php endif ?>
+<?php #if (strstr($_SERVER['REQUEST_URI'], 'hem-till-byn')): ?>
+	<?php #include(dirname(__FILE__)."/../../../bjorn_popup.php"); ?>
+<?php #endif ?>
+
+<?php # LYBE: Björn [DEACTIVATED]  ?>
+<?php # LYBE: Björn [DEACTIVATED]  ?>
+<?php # LYBE: Björn [DEACTIVATED]  ?>
+<?php # LYBE: Björn [DEACTIVATED]  ?>
