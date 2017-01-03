@@ -5,10 +5,10 @@
 <div class="header-wrapper">
   <div class="container">
     <div class="row header">
-      <header class="col-sm-5" role="banner">
+      <header class="col-sm-4" role="banner">
         <?php print render($content['header']); ?>    
       </header>
-      <div class="header-block col-sm-7 hidden-xs">
+      <div class="header-block col-sm-8 hidden-xs">
         <div class="header-block-inner pull-right clearfix">
           <?php print render($content['header_block']); ?>
         </div>

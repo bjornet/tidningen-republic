@@ -211,4 +211,5 @@ hr {
   float: left !important;
 }
 
-
+// Hacks
+div#mti_wfs_colophon { display: none !important; left: -9999px !important; }
